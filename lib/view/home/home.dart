@@ -7,8 +7,8 @@ import 'package:portofolio/view/top_nav_bar.dart';
 
 import '../widgets/horizontal_line.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

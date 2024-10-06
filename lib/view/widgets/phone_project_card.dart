@@ -7,7 +7,7 @@ import 'package:portofolio/view/widgets/horizontal_line.dart';
 
 // ignore: must_be_immutable
 class PhoneProjectCard extends StatelessWidget {
-  String? title, discription, year, role, githubLink;
+  String? title, discription, year, role, githubLink, image;
   PhoneProjectCard({
     super.key,
     required this.title,
@@ -15,6 +15,7 @@ class PhoneProjectCard extends StatelessWidget {
     required this.year,
     required this.role,
     required this.githubLink,
+    required this.image,
   });
 
   @override
@@ -30,15 +31,15 @@ class PhoneProjectCard extends StatelessWidget {
             width: width,
             height: 300,
             margin: EdgeInsets.symmetric(vertical: 10),
-            padding: EdgeInsets.all(70),
+            padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: forignColor,
               borderRadius: BorderRadius.circular(15),
             ),
-            // child: Image.network(
-            //   "",
-            //   fit: BoxFit.contain,
-            // ),
+            child: Image.network(
+              image!,
+              // fit: BoxFit.contain,
+            ),
           ),
           SizedBox(
             width: width,
@@ -91,7 +92,7 @@ class PhoneProjectCard extends StatelessWidget {
                 const HorizontalLine(),
                 SizedBox(height: 20),
                 GestureDetector(
-                  onTap: () => html.window.open('https://www.google.com', '_blank'),
+                  onTap: () => html.window.open(githubLink!, '_blank'),
                   child: CustomText(
                     text: "SEE ON GITHUB",
                     fontSize: 14,

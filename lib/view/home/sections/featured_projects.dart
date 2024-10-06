@@ -25,32 +25,70 @@ class FeaturedProjects extends StatelessWidget {
           color: Colors.grey,
         ),
         const SizedBox(height: 50),
-        SizedBox(
-          height: width > 700 ? (600 * 3) + 200 : (750 * 3) + 200,
-          child: ListView.separated(
-            separatorBuilder: (context, index) => const HorizontalLine(),
-            itemCount: 3,
-            itemBuilder: (_, i) {
-              return width > 700
-                  ? WebProjectCard(
-                      title: "Promotional landing page for our favorite show",
-                      discription:
-                          "Teamed up with a designer to breathe life into a promotional webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a newsletter feature to keep fans updated with the latest adventures.",
-                      year: "2023",
-                      role: "Full Stack",
-                      githubLink: "www.ss.com",
-                    )
-                  : PhoneProjectCard(
-                      title: "Promotional landing page for our favorite show",
-                      discription:
-                          "Teamed up with a designer to breathe life into a promotional webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a newsletter feature to keep fans updated with the latest adventures.",
-                      year: "2023",
-                      role: "Full Stack",
-                      githubLink: "www.ss.com",
-                    );
-            },
-          ),
-        ),
+        width > 700
+            ? Column(
+                children: [
+                  WebProjectCard(
+                    title: "Fashion E-Commerce App",
+                    discription:
+                        "A modern shopping app that allows users to browse, search, and purchase fashion items with secure payments, wishlists, and real-time order tracking. Built with Flutter and integrated with Firebase and Sqflite.",
+                    year: "2024",
+                    role: "Full Stack",
+                    githubLink: "https://github.com/gara0xq/E-Commerce",
+                    image: "assets/e-commerce.png",
+                  ),
+                  WebProjectCard(
+                    title: "Banking App (PUNCH)",
+                    discription:
+                        "A secure banking app enabling users to manage accounts, view transactions, and make transfers with advanced security features and real-time updates. Developed with Flutter and integrated with Restfull API.",
+                    year: "2024",
+                    role: "Team Manager",
+                    githubLink: "https://github.com/gara0xq/Punch",
+                    image: "assets/punch.png",
+                  ),
+                  WebProjectCard(
+                    title: "Local Music App (Musify)",
+                    discription:
+                        "A local music streaming app that lets users discover, stream, and create playlists of local artists. Built with Flutter, focusing on promoting regional music talent (Still under work).",
+                    year: "2024",
+                    role: "Full Stack",
+                    githubLink: "https://github.com/gara0xq/musify",
+                    image: "assets/spotify.png",
+                  ),
+                ],
+              )
+            : Column(
+                children: [
+                  PhoneProjectCard(
+                    title: "Fashion E-Commerce App",
+                    discription:
+                        "A modern shopping app that allows users to browse, search, and purchase fashion items with secure payments, wishlists, and real-time order tracking. Built with Flutter and integrated with Firebase and Sqflite.",
+                    year: "2024",
+                    role: "Full Stack",
+                    githubLink: "https://github.com/gara0xq/E-Commerce",
+                    image: "assets/e-commerce.png",
+                  ),
+                  PhoneProjectCard(
+                    title: "Banking App (PUNCH)",
+                    discription:
+                        "A secure banking app enabling users to manage accounts, view transactions, and make transfers with advanced security features and real-time updates. Developed with Flutter and integrated with Restfull API.",
+                    year: "2024",
+                    role: "Team Manager",
+                    githubLink: "https://github.com/gara0xq/Punch",
+                    image: "assets/punch.png",
+                  ),
+                  PhoneProjectCard(
+                    title: "Local Music App (Musify)",
+                    discription:
+                        "A local music streaming app that lets users discover, stream, and create playlists of local artists. Built with Flutter, focusing on promoting regional music talent (Still under work).",
+                    year: "2024",
+                    role: "Full Stack",
+                    githubLink: "https://github.com/gara0xq/musify",
+                    image: "assets/spotify.png",
+                  ),
+                ],
+              ),
+
         SizedBox(height: 15),
 
         // ProjectCard(),

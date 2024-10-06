@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:portofolio/constants/colors.dart';
 import 'package:portofolio/view/widgets/custom_text.dart';
 
@@ -25,6 +26,7 @@ class AboutMe extends StatelessWidget {
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(
                   text: "I am a front-end developer based in Sydney. Has Mechanical Engineering background.",
@@ -38,10 +40,18 @@ class AboutMe extends StatelessWidget {
                   color: Colors.grey,
                 ),
                 SizedBox(height: 20),
-                CustomText(
-                  text: "MORE ABOUT ME",
-                  fontSize: 14,
-                  color: primaryColor,
+                SizedBox(
+                  width: 180,
+                  child: TextButton(
+                    onPressed: () {
+                      Get.toNamed("/about_me");
+                    },
+                    child: CustomText(
+                      text: "MORE ABOUT ME",
+                      fontSize: 14,
+                      color: primaryColor,
+                    ),
+                  ),
                 ),
               ],
             ),

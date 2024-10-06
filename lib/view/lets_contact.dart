@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portofolio/constants/colors.dart';
-import 'package:portofolio/view/widgets/custom_input_field.dart';
+import 'package:portofolio/constants/links.dart';
 import 'package:portofolio/view/widgets/custom_text.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
@@ -18,6 +18,8 @@ class LetsContact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -39,7 +41,7 @@ class LetsContact extends StatelessWidget {
                         color: Colors.grey,
                       ),
                       SelectableText(
-                        'robertgarcia@gmail.com',
+                        email,
                         style: TextStyle(color: primaryColor, fontSize: 16),
                       ),
                     ],
@@ -52,7 +54,7 @@ class LetsContact extends StatelessWidget {
                         fontSize: 16,
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () => html.window.open(resume, '_blank'),
                         child: CustomText(
                           text: "Resume",
                           color: primaryColor,
@@ -72,7 +74,7 @@ class LetsContact extends StatelessWidget {
                       width: 30,
                       child: Image.asset('assets/github.png'),
                     ), // Replace with actual icon
-                    onTap: () => html.window.open('https://www.google.com', '_blank'),
+                    onTap: () => html.window.open(github, '_blank'),
                   ),
                   SizedBox(width: 10),
                   GestureDetector(
@@ -81,69 +83,12 @@ class LetsContact extends StatelessWidget {
                       width: 30,
                       child: Image.asset('assets/linkedin.png'),
                     ), // Replace with actual icon
-                    onTap: () => html.window.open('https://www.google.com', '_blank'),
+                    onTap: () => html.window.open(linkedin, '_blank'),
                   ),
                 ],
               ),
+              SizedBox(height: 30),
             ],
-          ),
-        ),
-        Expanded(
-          child: Form(
-            key: _formKey, // Form key to validate
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // CustomTextField for Name
-                CustomInputField(
-                  label: 'Name',
-                  controller: nameController,
-                ),
-
-                // CustomTextField for Email with email validation
-                CustomInputField(
-                  label: 'Email',
-                  controller: emailController,
-                  validator: null,
-                ),
-
-                // CustomTextField for Subject
-                CustomInputField(
-                  label: 'Subject',
-                  controller: subjectController,
-                ),
-
-                // CustomTextField for Message with multiple lines
-                CustomInputField(
-                  label: 'Message',
-                  controller: messageController,
-                  maxLines: 5,
-                ),
-
-                const SizedBox(height: 20),
-                TextButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      // If all validations pass
-                    }
-                  },
-                  child: Container(
-                    height: 40,
-                    width: 120,
-                    decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: CustomText(
-                      text: 'SUBMIT',
-                      color: Colors.black,
-                      alignment: Alignment.center,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 40),
-              ],
-            ),
           ),
         ),
       ],
