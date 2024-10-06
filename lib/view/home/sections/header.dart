@@ -98,7 +98,7 @@ class _HeaderState extends State<Header> {
                       ? Padding(
                           padding: EdgeInsets.all(30),
                           child: Container(
-                            height: 600,
+                            // height: 600,
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: forignColor,

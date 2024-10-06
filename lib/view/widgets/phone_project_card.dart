@@ -30,7 +30,6 @@ class PhoneProjectCard extends StatelessWidget {
           Container(
             width: width,
             height: 300,
-            margin: EdgeInsets.symmetric(vertical: 10),
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: forignColor,

@@ -6,20 +6,10 @@ import 'package:portofolio/view/widgets/custom_text.dart';
 import 'dart:html' as html;
 
 class LetsContact extends StatelessWidget {
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController subjectController = TextEditingController();
-  final TextEditingController messageController = TextEditingController();
-
-  // Global key for the form validation
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-  LetsContact({super.key});
+  const LetsContact({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

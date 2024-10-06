@@ -29,7 +29,6 @@ class WebProjectCard extends StatelessWidget {
         children: [
           Container(
             width: cardWidth / 2 - 20,
-            // margin: EdgeInsets.symmetric(vertical: 10),
             padding: EdgeInsets.all(70),
             decoration: BoxDecoration(
               color: Color.fromARGB(30, 200, 200, 200),
