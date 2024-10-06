@@ -35,7 +35,7 @@ class PhoneProjectCard extends StatelessWidget {
               color: forignColor,
               borderRadius: BorderRadius.circular(15),
             ),
-            child: Image.network(
+            child: Image.asset(
               image!,
               // fit: BoxFit.contain,
             ),
